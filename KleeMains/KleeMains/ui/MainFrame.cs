@@ -17,5 +17,9 @@ namespace KleeMains
             InitializeComponent();
         }
 
+        private void MainFrame_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
