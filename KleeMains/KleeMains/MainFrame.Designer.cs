@@ -1,7 +1,7 @@
 ﻿
 namespace KleeMains
 {
-    partial class Form1
+    partial class MainFrame
     {
         /// <summary>
         ///  Required designer variable.
