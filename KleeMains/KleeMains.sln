@@ -5,11 +5,6 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KleeMains", "KleeMains\KleeMains.csproj", "{48CE044C-7DA9-4F1E-A2B5-39D754BAAAF1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{793E951C-1771-49F8-9038-DC69C38E2C03}"
-	ProjectSection(SolutionItems) = preProject
-		Character.cs = Character.cs
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
