@@ -7,36 +7,47 @@ using System.Diagnostics;
 
 using System.Data.SQLite;
 
+using System.Runtime.InteropServices;
+
+
+
 
 namespace KleeMains
 {
+
+
+
     static class Program
     {
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
+  
+
+
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            AllocConsole();
             SQLiteConnection sqlite_conn;
             sqlite_conn = CreateConnection();
-            //CreateTable(sqlite_conn);
-            //InsertData(sqlite_conn);
             ReadData(sqlite_conn);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainFrame());
-      
- 
- 
 
             static SQLiteConnection CreateConnection()
             {
 
                 SQLiteConnection sqlite_conn;
                 // Create a new database connection:
-                sqlite_conn = new SQLiteConnection("Data Source=database.db; Version = 3; New = True; Compress = True; ");
+                sqlite_conn = new SQLiteConnection("Data Source=database.db; Version = 3; New = False; Compress = True; ");
                 // Open the connection:
                 try
                 {
@@ -49,49 +60,48 @@ namespace KleeMains
                 return sqlite_conn;
             }
 
-            static void CreateTable(SQLiteConnection conn)
-            {
-
-                SQLiteCommand sqlite_cmd;
-                string Createsql = "CREATE TABLE SampleTable(Col1 VARCHAR(20), Col2 INT)";
-                string Createsql1 = "CREATE TABLE SampleTable1(Col1 VARCHAR(20), Col2 INT)";
-                sqlite_cmd = conn.CreateCommand();
-                sqlite_cmd.CommandText = Createsql;
-                sqlite_cmd.ExecuteNonQuery();
-                sqlite_cmd.CommandText = Createsql1;
-                sqlite_cmd.ExecuteNonQuery();
-
-            }
-
-            static void InsertData(SQLiteConnection conn)
-            {
-                SQLiteCommand sqlite_cmd;
-                sqlite_cmd = conn.CreateCommand();
-                sqlite_cmd.CommandText = "INSERT INTO SampleTable(Col1, Col2) VALUES('Test Text ', 1); ";
-                sqlite_cmd.ExecuteNonQuery();
-                sqlite_cmd.CommandText = "INSERT INTO SampleTable(Col1, Col2) VALUES('Test1 Text1 ', 2); ";
-                sqlite_cmd.ExecuteNonQuery();
-                sqlite_cmd.CommandText = "INSERT INTO SampleTable(Col1, Col2) VALUES('Test2 Text2 ', 3); ";
-                sqlite_cmd.ExecuteNonQuery();
-                sqlite_cmd.CommandText = "INSERT INTO SampleTable1(Col1, Col2) VALUES('Test3 Text3 ', 3); ";
-                sqlite_cmd.ExecuteNonQuery();
 
 
-            }
 
             static void ReadData(SQLiteConnection conn)
             {
                 SQLiteDataReader sqlite_datareader;
                 SQLiteCommand sqlite_cmd;
                 sqlite_cmd = conn.CreateCommand();
-                sqlite_cmd.CommandText = "SELECT * FROM SampleTable";
+                sqlite_cmd.CommandText = "SELECT * FROM Characters";
 
                 sqlite_datareader = sqlite_cmd.ExecuteReader();
                 while (sqlite_datareader.Read())
                 {
-                    string myreader = sqlite_datareader.GetString(0);
-                    Debug.WriteLine(myreader);
-                }
+                    for (int i = 0; i < 23; i++)
+                    {
+                        try
+                        {
+                            string myreader = sqlite_datareader.GetString(i);
+                            Console.WriteLine(myreader);
+
+                        }
+                        catch (Exception e)
+                        {
+
+                            try
+                            {
+                                int myreader = sqlite_datareader.GetInt32(i);
+                                Console.WriteLine(myreader);
+                            }
+                            catch (Exception ex)
+                            {
+                                float myreader = sqlite_datareader.GetFloat(i);
+                                Console.WriteLine(myreader);
+
+                            }
+
+
+                        }
+
+                    }
+                };
+            
                 conn.Close();
             }
         }
