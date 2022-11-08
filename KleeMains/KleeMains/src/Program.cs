@@ -33,10 +33,10 @@ namespace KleeMains
         [STAThread]
         static void Main()
         {
-            AllocConsole();
+            AllocConsole(); //debug only
             SQLiteConnection sqlite_conn;
             sqlite_conn = CreateConnection();
-            ReadData(sqlite_conn);
+            executeQuery(sqlite_conn,"SELECT * FROM Weapons");
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -63,22 +63,23 @@ namespace KleeMains
 
 
 
-            static void ReadData(SQLiteConnection conn)
+            static string executeQuery(SQLiteConnection conn,string query)
             {
                 SQLiteDataReader sqlite_datareader;
                 SQLiteCommand sqlite_cmd;
                 sqlite_cmd = conn.CreateCommand();
-                sqlite_cmd.CommandText = "SELECT * FROM Characters";
+                sqlite_cmd.CommandText = query;
 
                 sqlite_datareader = sqlite_cmd.ExecuteReader();
+                string result = "";
                 while (sqlite_datareader.Read())
                 {
-                    for (int i = 0; i < 23; i++)
+                    for (int i = 0; i < sqlite_datareader.FieldCount; i++)
                     {
                         try
                         {
                             string myreader = sqlite_datareader.GetString(i);
-                            Console.WriteLine(myreader);
+                            result +=  myreader + " | ";
 
                         }
                         catch (Exception e)
@@ -87,12 +88,14 @@ namespace KleeMains
                             try
                             {
                                 int myreader = sqlite_datareader.GetInt32(i);
-                                Console.WriteLine(myreader);
+                                result += myreader + " | ";
+
                             }
                             catch (Exception ex)
                             {
                                 float myreader = sqlite_datareader.GetFloat(i);
-                                Console.WriteLine(myreader);
+                                result += myreader +   " | ";
+
 
                             }
 
@@ -100,8 +103,11 @@ namespace KleeMains
                         }
 
                     }
+                    result += "\n";
+                    //sqlite_datareader.NextResult();
                 };
-            
+                Console.Write(result);
+                return result;
                 conn.Close();
             }
         }

@@ -9,7 +9,7 @@ namespace KleeMains
 
     class Weapon
     {
-        enum WeaponType { Catalyst,LongSword,Claymore,Bow,Spear};
+        enum WeaponType { Catalyst,LongSword,Claymore,Bow,Polearm};
         enum WeaponBonusType { PhysicalDMGBonus,ATKPercent,CritRate,CritDMG,HealthPercentage,EM,EnergyRecharge,DEFPercent}
 
         private string name;
