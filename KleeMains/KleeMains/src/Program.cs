@@ -23,9 +23,6 @@ namespace KleeMains
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
 
-  
-
-
 
         /// <summary>
         ///  The main entry point for the application.
