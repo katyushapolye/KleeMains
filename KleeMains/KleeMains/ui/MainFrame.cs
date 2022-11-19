@@ -46,7 +46,7 @@ namespace KleeMains
 
         private void pictureBox2_MouseDown(object sender, EventArgs e)
         {
-            Console.Write("started Dragging");
+            //Console.Write("started Dragging");
             dragging = true;
             dragCursorPoint = Cursor.Position;
             dragFormPoint = this.Location;
@@ -67,7 +67,7 @@ namespace KleeMains
         {
             if (dragging)
             {
-                Console.Write("Dragging");
+                //Console.Write("Dragging");
                 Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
                 this.Location = Point.Add(dragFormPoint, new Size(dif));
             }

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace KleeMains
 {
+    enum Elements { Cryo, Pyro, Hydro, Eletro, Anemo, Geo, Dendro }
+
     class Character
     {
         //static shit
-        enum Elements{ Cryo,Pyro,Hydro,Eletro,Anemo,Geo,Dendro }
+     
         enum Stats { HealthFlat,HealthPercent,ATKFlat,ATKPercent,DEFFlat,DEFPercent,CritRate,CritDMG,EM,EnergyRecharge}
         enum Roles { MainDPS,SubDPS,Support,Healer}
 
