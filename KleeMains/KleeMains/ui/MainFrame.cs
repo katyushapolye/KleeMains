@@ -14,12 +14,6 @@ namespace KleeMains
     public partial class MainFrame : Form
     {
         //boiler plate code
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
 
         bool dragging = false;
         private Point dragCursorPoint;
@@ -39,12 +33,10 @@ namespace KleeMains
 
      
 
-     
-
-     
 
 
-        private void pictureBox2_MouseDown(object sender, EventArgs e)
+           //Toolbar slide
+        private void ToolBar_MouseDown(object sender, EventArgs e)
         {
             //Console.Write("started Dragging");
             dragging = true;
@@ -55,7 +47,7 @@ namespace KleeMains
         }
 
 
-        private void pictureBox2_MouseUp(object sender, EventArgs e)
+        private void ToolBar_MouseUp(object sender, EventArgs e)
         {
             dragging = false;
 
@@ -63,7 +55,7 @@ namespace KleeMains
 
         }
 
-        private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
+        private void ToolBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging)
             {
@@ -74,4 +66,6 @@ namespace KleeMains
 
         }
     }
+
+           //Toolbar slide end
 }

@@ -36,24 +36,26 @@ namespace KleeMains
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
-            this.button1 = new System.Windows.Forms.Button();
+            this.C0_Button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.C1_Button = new System.Windows.Forms.Button();
+            this.C2_Button = new System.Windows.Forms.Button();
+            this.C3_Button = new System.Windows.Forms.Button();
+            this.ToolBar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ToolBar)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // C0_Button
             // 
-            this.button1.Location = new System.Drawing.Point(923, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 140);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.C0_Button.BackColor = System.Drawing.Color.Firebrick;
+            this.C0_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.C0_Button.Location = new System.Drawing.Point(923, 12);
+            this.C0_Button.Name = "C0_Button";
+            this.C0_Button.Size = new System.Drawing.Size(140, 140);
+            this.C0_Button.TabIndex = 0;
+            this.C0_Button.Text = "DPS";
+            this.C0_Button.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -68,45 +70,51 @@ namespace KleeMains
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // button2
+            // C1_Button
             // 
-            this.button2.Location = new System.Drawing.Point(923, 167);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 140);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.C1_Button.BackColor = System.Drawing.Color.Firebrick;
+            this.C1_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.C1_Button.Location = new System.Drawing.Point(923, 167);
+            this.C1_Button.Name = "C1_Button";
+            this.C1_Button.Size = new System.Drawing.Size(140, 140);
+            this.C1_Button.TabIndex = 5;
+            this.C1_Button.Text = "SUB-DPS";
+            this.C1_Button.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // C2_Button
             // 
-            this.button3.Location = new System.Drawing.Point(923, 326);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 140);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.C2_Button.BackColor = System.Drawing.Color.Firebrick;
+            this.C2_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.C2_Button.Location = new System.Drawing.Point(923, 326);
+            this.C2_Button.Name = "C2_Button";
+            this.C2_Button.Size = new System.Drawing.Size(140, 140);
+            this.C2_Button.TabIndex = 6;
+            this.C2_Button.Text = "EM Battery";
+            this.C2_Button.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // C3_Button
             // 
-            this.button4.Location = new System.Drawing.Point(923, 486);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 140);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.C3_Button.BackColor = System.Drawing.Color.Firebrick;
+            this.C3_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.C3_Button.Location = new System.Drawing.Point(923, 486);
+            this.C3_Button.Name = "C3_Button";
+            this.C3_Button.Size = new System.Drawing.Size(140, 140);
+            this.C3_Button.TabIndex = 7;
+            this.C3_Button.Text = "Healer";
+            this.C3_Button.UseVisualStyleBackColor = false;
             // 
-            // pictureBox2
+            // ToolBar
             // 
-            this.pictureBox2.BackgroundImage = global::KleeMains.Properties.Resources.blackbar;
-            this.pictureBox2.InitialImage = global::KleeMains.Properties.Resources.blackbar;
-            this.pictureBox2.Location = new System.Drawing.Point(-6, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1140, 10);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
-            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseMove);
-            this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
+            this.ToolBar.BackgroundImage = global::KleeMains.Properties.Resources.blackbar;
+            this.ToolBar.InitialImage = global::KleeMains.Properties.Resources.blackbar;
+            this.ToolBar.Location = new System.Drawing.Point(-6, 0);
+            this.ToolBar.Name = "ToolBar";
+            this.ToolBar.Size = new System.Drawing.Size(1140, 10);
+            this.ToolBar.TabIndex = 8;
+            this.ToolBar.TabStop = false;
+            this.ToolBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ToolBar_MouseDown);
+            this.ToolBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ToolBar_MouseMove);
+            this.ToolBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ToolBar_MouseUp);
             // 
             // MainFrame
             // 
@@ -115,12 +123,12 @@ namespace KleeMains
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1117, 638);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ToolBar);
+            this.Controls.Add(this.C3_Button);
+            this.Controls.Add(this.C2_Button);
+            this.Controls.Add(this.C1_Button);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.C0_Button);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.Color.OrangeRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -128,19 +136,19 @@ namespace KleeMains
             this.Text = "KleeMains";
             this.Load += new System.EventHandler(this.MainFrame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ToolBar)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button C0_Button;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button C1_Button;
+        private System.Windows.Forms.Button C2_Button;
+        private System.Windows.Forms.Button C3_Button;
+        private System.Windows.Forms.PictureBox ToolBar;
     }
 }
 

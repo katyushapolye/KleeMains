@@ -12,10 +12,10 @@ namespace KleeMains
     {
         //static shit
      
-        enum Stats { HealthFlat,HealthPercent,ATKFlat,ATKPercent,DEFFlat,DEFPercent,CritRate,CritDMG,EM,EnergyRecharge}
-        enum Roles { MainDPS,SubDPS,Support,Healer}
+        public enum Stats { HealthFlat,HealthPercent,ATKFlat,ATKPercent,DEFFlat,DEFPercent,CritRate,CritDMG,EM,EnergyRecharge}
+        public enum Roles { MainDPS,SubDPS,Support,Healer}
 
-        enum AscensionBonus {ElementalDMG,ATK,DEF,PhysicalDMG,EnergyRecharge,EM,Healing,CritRate,CritDMG}
+        public enum AscensionBonus {ElementalDMG,ATK,DEF,PhysicalDMG,EnergyRecharge,EM,Healing,CritRate,CritDMG}
 
 
 
@@ -33,29 +33,29 @@ namespace KleeMains
         3.532,3.618,3.704,3.789,3.875,3.962,4.048,4.134,4.220,4.307,4.393,4.480,4.567,4.653,4.740,4.827,4.914,5.001,5.089,5.176,5.263,5.351,5.438,5.526,5.614,5.702,5.790,5.878,5.966,6.054,
         6.142,6.230,6.319,6.407,6.496,6.585,6.673,6.762,6.851,6.940,7.029,7.119,7.208,7.297,7.387,7.476,7.566,7.656,7.746,7.836,7.926,8.016,8.106,8.196,8.286,8.377,8.467,8.558,8.649,8.739
         };
-        enum CollectablesMaterials
+        public enum CollectablesMaterials
         {
             AmakumoFruit, CallaLily, Cecilia, CorLapis, CrystalMarrow, DandelionSeed, Dendrobium, FluorescentFungus, GlazeLily, JueyunChili, KalpalataLotus,
             NakuWeed, NilotpalaLotus, NoctilucousJade, Onikabuto, Padisarah, PhilanemoMushroom, Qingxin, Redcrest, RukkhashavaMushrooms, SakuraBloom, SangoPearl, Scarab,
             SeaGanoderma, SilkFlower, SmallLampGrass, Starconch, Valberry, Violetgrass, WindwheelAster, Wolfhook
         }
-        enum FarmableMaterials
+        public enum FarmableMaterials
         {
             HurricaneSeed, LightningPrism, BasaltPillar, HoarfrostCore, EverflameSeed, CleansingHeart, JuvenileJade, CrystallineBloom, MarionetteCore,
             PerpetualHeart, SmolderingPearl, DewOfRepudiation, RiftbornRegalia, DragonheirsFalseFin, RunicFang, MajesticHookedBeak, ThunderclapFruitcore,
             PerpetualCaliber, LightGuidingTetrahedron
         }
-        enum CommonMaterialT1 { SlimeCondensate, DamagedMask, DiviningScroll, FirmArrowhead, RecruitsInsignia, TreasureHoarderInsignia, WhopperFlowerNectar, OldHandguard, SpectralHusk, FungalSpores, FadedRedSatin }
-        enum CommonMaterialT2 { SlimeSecretions, StainedMask, SealedScroll, SharpArrowhead, SergeantsInsignia, SilverRavenInsignia, ShimmeringNectar, KageuchiHandguard, SpectralHeart, LuminescentPollen, TrimmedRedSilk }
-        enum CommonMaterialT3 { SlimeConcentrate, OminousMask, ForbiddenCurseScroll, WeatheredArrowhead, LieutenantsInsignia, GoldenRavenInsignia, EnergyNectar, FamedHandguard, SpectralNucleus, CrystallineCystDust, RichRedBrocade }
+        public enum CommonMaterialT1 { SlimeCondensate, DamagedMask, DiviningScroll, FirmArrowhead, RecruitsInsignia, TreasureHoarderInsignia, WhopperFlowerNectar, OldHandguard, SpectralHusk, FungalSpores, FadedRedSatin }
+        public enum CommonMaterialT2 { SlimeSecretions, StainedMask, SealedScroll, SharpArrowhead, SergeantsInsignia, SilverRavenInsignia, ShimmeringNectar, KageuchiHandguard, SpectralHeart, LuminescentPollen, TrimmedRedSilk }
+        public enum CommonMaterialT3 { SlimeConcentrate, OminousMask, ForbiddenCurseScroll, WeatheredArrowhead, LieutenantsInsignia, GoldenRavenInsignia, EnergyNectar, FamedHandguard, SpectralNucleus, CrystallineCystDust, RichRedBrocade }
 
 
-        enum TalentMaterials
+        public enum TalentMaterials
         {
             Freedom,Resistence,Ballad,Prosperity,Diligence,Gold,Transience,Elegance,Light,Admonition,Ingenuity,Praxis
         }
 
-        enum TalentAscensionMaterial
+        public enum TalentAscensionMaterial
         {
             DvalinsPlume,DvalinsClaw,DvalinsSigh,TailOfBoreas,RingOfBoreas,SpiritLocketOfBoreas,TuskOfMonocerosCaeli,ShardOfAFoulLegacy,ShadowOfTheWarrior,
             DragonLordsCrown,BloodjadeBranch,GildedScale,MoltenMoment,HellfireButterfly,AshenHeart,MudraOfTheMaleficGeneral,TearsOfTheCalamitousGod,TheMeaningOfAeons
@@ -77,13 +77,46 @@ namespace KleeMains
 
         //ascension materials
 
+        public Character(string name,string title,Elements eA,Weapon charWeapon,bool rarity,int baseATK,int baseDEF,int baseHP,float critRate,float critDMG,Roles role
+            ,CollectablesMaterials cM,
+            CommonMaterialT1 t1,CommonMaterialT2 t2,CommonMaterialT3 t3,FarmableMaterials fm,TalentMaterials tm,TalentAscensionMaterial talAm,
+            float maxAHP,float maxAATK,float maxADef,AscensionBonus ascensionBonus,Stats bestinSub)
+        {
+            this.name = name;
+            this.title = title;
+            this.elementalAlignment = eA;
+            this.characterWeapon = charWeapon;
+            this.rarity = rarity;
+            this.baseATK = baseATK;
+            this.baseDEF = baseDEF;
+            this.baseHealth = baseHP;
+            this.critRate = critRate;
+            this.critDMG = critDMG;
+            this.role = role;
+            this.collectableMaterial = cM;
+            this.commonMaterialT1 = t1;
+            this.commonMaterialT2 = t2;
+            this.commonMaterialT3 = t3;
+            this.farmableMaterial = fm;
+            this.talentMaterial = tm;
+            this.talentAscensionMaterial = talAm;
+            this.maxAscensionHealthMultiplier = maxAHP;
+            this.maxAscensionATKMultiplier = maxAATK;
+            this.maxAscensionDEFMultiplier = maxADef;
+            this.ascensionBonus = ascensionBonus;
+            this.bestStatinSubstat = bestinSub;
+
+
+
+        }
+
         CollectablesMaterials collectableMaterial;
         FarmableMaterials farmableMaterial;
         CommonMaterialT1 commonMaterialT1;
-        CommonMaterialT1 commonMaterialT2;
-        CommonMaterialT1 commonMaterialT3;
+        CommonMaterialT2 commonMaterialT2;
+        CommonMaterialT3 commonMaterialT3;
 
-
+        TalentMaterials talentMaterial;
         TalentAscensionMaterial talentAscensionMaterial;
         //Control
 
@@ -107,6 +140,9 @@ namespace KleeMains
 
 
 
+        //constructor
+
+        
 
         //methods
 
@@ -129,6 +165,12 @@ namespace KleeMains
         int getBaseCritRateAtLevel(int level)
         {
             return 0;
+        }
+
+
+        public void printValues()
+        {
+            Console.WriteLine(name);
         }
 
 
