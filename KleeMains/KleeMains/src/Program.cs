@@ -10,8 +10,6 @@ using System.Data.SQLite;
 using System.Runtime.InteropServices;
 
 
-
-
 namespace KleeMains
 {
 
@@ -22,6 +20,7 @@ namespace KleeMains
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
+        public static List<Character> characters;
 
 
         /// <summary>
@@ -33,17 +32,14 @@ namespace KleeMains
 
 
             AllocConsole(); //debug only
-      
-
-
             Database db = new Database("database.db");
-            List<Character> characters =  db.getAllCharacters();
-
-            for(int i = 0; i < characters.Count; i++)
-            {
-                characters[i].printValues();
-            }
+            characters =  db.getAllCharacters();
             
+            
+
+          
+
+
 
 
 

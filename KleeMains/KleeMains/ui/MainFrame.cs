@@ -31,8 +31,6 @@ namespace KleeMains
 
   
 
-     
-
 
 
            //Toolbar slide
@@ -45,7 +43,6 @@ namespace KleeMains
 
 
         }
-
 
         private void ToolBar_MouseUp(object sender, EventArgs e)
         {
@@ -63,6 +60,25 @@ namespace KleeMains
                 Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
                 this.Location = Point.Add(dragFormPoint, new Size(dif));
             }
+
+        }
+
+
+        private void openCharSeletion()
+        {
+            CharSelection charSelection = new CharSelection();
+
+
+            charSelection.Show();
+            
+
+        }
+
+    
+
+        private void C0_Switch_Click(object sender, EventArgs e)
+        {
+            openCharSeletion();
 
         }
     }

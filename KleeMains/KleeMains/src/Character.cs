@@ -170,8 +170,30 @@ namespace KleeMains
 
         public void printValues()
         {
-            Console.WriteLine(name);
+            Console.Write(name);
+            Console.Write(" | ");
+            Console.Write(title);
+            Console.Write(" | ");
+
+            Console.Write(this.characterWeapon.getName());
+            Console.Write(" | ");
+
+
+            Console.WriteLine();
+
         }
+
+        public Weapon getWeapon()
+        {
+            return this.characterWeapon;
+        }
+
+        public string getName()
+        {
+            return this.name;
+                
+        }
+
 
 
 

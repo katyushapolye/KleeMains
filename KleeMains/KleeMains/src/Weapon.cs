@@ -38,6 +38,8 @@ namespace KleeMains
             Console.WriteLine(this.secondStatType);
             Console.WriteLine(this.secondStatPoints);
         }
+
+        public string getName() { return this.name; }
         
 
 
