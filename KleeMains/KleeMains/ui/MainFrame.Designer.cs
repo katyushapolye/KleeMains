@@ -37,7 +37,7 @@ namespace KleeMains
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.C0_Button = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.charSpriteUIImage = new System.Windows.Forms.PictureBox();
             this.C1_Button = new System.Windows.Forms.Button();
             this.C2_Button = new System.Windows.Forms.Button();
             this.C3_Button = new System.Windows.Forms.Button();
@@ -48,8 +48,15 @@ namespace KleeMains
             this.C1_Switch = new System.Windows.Forms.Button();
             this.C2_Switch = new System.Windows.Forms.Button();
             this.C3_Switch = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PartyTitleLabelUI = new System.Windows.Forms.Label();
+            this.dummyBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.generatePartyReportButtonUI = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.charSpriteUIImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dummyBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // C0_Button
@@ -63,18 +70,18 @@ namespace KleeMains
             this.C0_Button.Text = "DPS";
             this.C0_Button.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // charSpriteUIImage
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.BackgroundImage = global::KleeMains.Properties.Resources.Character_Klee_Card;
-            this.pictureBox1.Image = global::KleeMains.Properties.Resources.Character_Klee_Card;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(582, 93);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(266, 519);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.charSpriteUIImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.charSpriteUIImage.BackgroundImage = global::KleeMains.Properties.Resources.Character_Klee_Card;
+            this.charSpriteUIImage.Image = global::KleeMains.Properties.Resources.Character_Klee_Card;
+            this.charSpriteUIImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("charSpriteUIImage.InitialImage")));
+            this.charSpriteUIImage.Location = new System.Drawing.Point(582, 93);
+            this.charSpriteUIImage.Name = "charSpriteUIImage";
+            this.charSpriteUIImage.Size = new System.Drawing.Size(266, 519);
+            this.charSpriteUIImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.charSpriteUIImage.TabIndex = 4;
+            this.charSpriteUIImage.TabStop = false;
             // 
             // C1_Button
             // 
@@ -128,7 +135,7 @@ namespace KleeMains
             this.charNameUIText.BackColor = System.Drawing.Color.Transparent;
             this.charNameUIText.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.charNameUIText.ForeColor = System.Drawing.Color.MintCream;
-            this.charNameUIText.Location = new System.Drawing.Point(582, 13);
+            this.charNameUIText.Location = new System.Drawing.Point(582, 22);
             this.charNameUIText.Name = "charNameUIText";
             this.charNameUIText.Size = new System.Drawing.Size(266, 44);
             this.charNameUIText.TabIndex = 9;
@@ -141,7 +148,7 @@ namespace KleeMains
             this.charTitleUIText.BackColor = System.Drawing.Color.Transparent;
             this.charTitleUIText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.charTitleUIText.ForeColor = System.Drawing.Color.Snow;
-            this.charTitleUIText.Location = new System.Drawing.Point(582, 57);
+            this.charTitleUIText.Location = new System.Drawing.Point(582, 66);
             this.charTitleUIText.Name = "charTitleUIText";
             this.charTitleUIText.Size = new System.Drawing.Size(266, 22);
             this.charTitleUIText.TabIndex = 10;
@@ -189,13 +196,79 @@ namespace KleeMains
             this.C3_Switch.Text = "SwitchC1";
             this.C3_Switch.UseVisualStyleBackColor = false;
             // 
+            // PartyTitleLabelUI
+            // 
+            this.PartyTitleLabelUI.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PartyTitleLabelUI.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.PartyTitleLabelUI.Location = new System.Drawing.Point(202, 37);
+            this.PartyTitleLabelUI.Name = "PartyTitleLabelUI";
+            this.PartyTitleLabelUI.Size = new System.Drawing.Size(177, 51);
+            this.PartyTitleLabelUI.TabIndex = 15;
+            this.PartyTitleLabelUI.Text = "Party Info";
+            this.PartyTitleLabelUI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dummyBox1
+            // 
+            this.dummyBox1.BackColor = System.Drawing.Color.Transparent;
+            this.dummyBox1.BackgroundImage = global::KleeMains.Properties.Resources.Border;
+            this.dummyBox1.Image = global::KleeMains.Properties.Resources.Border;
+            this.dummyBox1.InitialImage = global::KleeMains.Properties.Resources.Border;
+            this.dummyBox1.Location = new System.Drawing.Point(12, 16);
+            this.dummyBox1.Name = "dummyBox1";
+            this.dummyBox1.Size = new System.Drawing.Size(552, 291);
+            this.dummyBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dummyBox1.TabIndex = 16;
+            this.dummyBox1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::KleeMains.Properties.Resources.Border;
+            this.pictureBox1.Image = global::KleeMains.Properties.Resources.Border;
+            this.pictureBox1.InitialImage = global::KleeMains.Properties.Resources.Border;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 313);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(552, 313);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(127, 326);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(316, 51);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Character Info";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // generatePartyReportButtonUI
+            // 
+            this.generatePartyReportButtonUI.BackColor = System.Drawing.Color.DarkGreen;
+            this.generatePartyReportButtonUI.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.generatePartyReportButtonUI.FlatAppearance.BorderSize = 0;
+            this.generatePartyReportButtonUI.ForeColor = System.Drawing.Color.Yellow;
+            this.generatePartyReportButtonUI.Location = new System.Drawing.Point(202, 262);
+            this.generatePartyReportButtonUI.Name = "generatePartyReportButtonUI";
+            this.generatePartyReportButtonUI.Size = new System.Drawing.Size(177, 35);
+            this.generatePartyReportButtonUI.TabIndex = 19;
+            this.generatePartyReportButtonUI.Text = "Generate Party Report";
+            this.generatePartyReportButtonUI.UseVisualStyleBackColor = false;
+            this.generatePartyReportButtonUI.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainFrame
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(1117, 638);
+            this.ClientSize = new System.Drawing.Size(1117, 657);
+            this.Controls.Add(this.generatePartyReportButtonUI);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PartyTitleLabelUI);
             this.Controls.Add(this.C3_Switch);
             this.Controls.Add(this.C2_Switch);
             this.Controls.Add(this.C1_Switch);
@@ -206,16 +279,19 @@ namespace KleeMains
             this.Controls.Add(this.C3_Button);
             this.Controls.Add(this.C2_Button);
             this.Controls.Add(this.C1_Button);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.charSpriteUIImage);
             this.Controls.Add(this.C0_Button);
+            this.Controls.Add(this.dummyBox1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.Color.OrangeRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainFrame";
             this.Text = "KleeMains";
             this.Load += new System.EventHandler(this.MainFrame_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charSpriteUIImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dummyBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,7 +299,7 @@ namespace KleeMains
         #endregion
 
         private System.Windows.Forms.Button C0_Button;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox charSpriteUIImage;
         private System.Windows.Forms.Button C1_Button;
         private System.Windows.Forms.Button C2_Button;
         private System.Windows.Forms.Button C3_Button;
@@ -234,6 +310,11 @@ namespace KleeMains
         private System.Windows.Forms.Button C1_Switch;
         private System.Windows.Forms.Button C2_Switch;
         private System.Windows.Forms.Button C3_Switch;
+        private System.Windows.Forms.Label PartyTitleLabelUI;
+        private System.Windows.Forms.PictureBox dummyBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button generatePartyReportButtonUI;
     }
 }
 

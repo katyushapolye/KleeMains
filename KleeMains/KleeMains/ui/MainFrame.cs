@@ -81,6 +81,11 @@ namespace KleeMains
             openCharSeletion();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
            //Toolbar slide end

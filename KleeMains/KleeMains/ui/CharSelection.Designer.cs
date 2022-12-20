@@ -70,6 +70,7 @@ namespace KleeMains
                 {
                     if (buttoncount == Program.characters.Count)
                     {
+                       
                         continue; //failsafe
                     }
 
@@ -79,7 +80,9 @@ namespace KleeMains
                     this.buttons[buttoncount].TabIndex = buttoncount;
                     this.buttons[buttoncount].Text = Program.characters[buttoncount].getName();
                     this.buttons[buttoncount].UseVisualStyleBackColor = true;
-                    //add click function
+                    this.buttons[buttoncount].Click += new System.EventHandler(this.selectChar);
+                    //add char card
+                    //this.buttons[buttoncount].Image = 
                     buttoncount++;
                     
                 }
