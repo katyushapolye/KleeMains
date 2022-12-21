@@ -53,6 +53,15 @@ namespace KleeMains
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.generatePartyReportButtonUI = new System.Windows.Forms.Button();
+            this.partySugestionUIButton = new System.Windows.Forms.Button();
+            this.partyStatsHelpUIButton = new System.Windows.Forms.Button();
+            this.partyElementalResUIDummy = new System.Windows.Forms.Label();
+            this.elementalResUIText = new System.Windows.Forms.Label();
+            this.maxDMGUIDummy = new System.Windows.Forms.Label();
+            this.maxDMGUIText = new System.Windows.Forms.Label();
+            this.saveCurrentPartyUIButton = new System.Windows.Forms.Button();
+            this.totalMoraCostUIDummy = new System.Windows.Forms.Label();
+            this.totalMoraCostUIText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.charSpriteUIImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dummyBox1)).BeginInit();
@@ -65,10 +74,11 @@ namespace KleeMains
             this.C0_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.C0_Button.Location = new System.Drawing.Point(923, 12);
             this.C0_Button.Name = "C0_Button";
-            this.C0_Button.Size = new System.Drawing.Size(140, 140);
+            this.C0_Button.Size = new System.Drawing.Size(119, 140);
             this.C0_Button.TabIndex = 0;
             this.C0_Button.Text = "DPS";
             this.C0_Button.UseVisualStyleBackColor = false;
+            this.C0_Button.Click += new System.EventHandler(this.C0_Button_Click);
             // 
             // charSpriteUIImage
             // 
@@ -89,10 +99,11 @@ namespace KleeMains
             this.C1_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.C1_Button.Location = new System.Drawing.Point(923, 167);
             this.C1_Button.Name = "C1_Button";
-            this.C1_Button.Size = new System.Drawing.Size(140, 140);
+            this.C1_Button.Size = new System.Drawing.Size(119, 140);
             this.C1_Button.TabIndex = 5;
             this.C1_Button.Text = "SUB-DPS";
             this.C1_Button.UseVisualStyleBackColor = false;
+            this.C1_Button.Click += new System.EventHandler(this.C1_Button_Click);
             // 
             // C2_Button
             // 
@@ -100,10 +111,11 @@ namespace KleeMains
             this.C2_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.C2_Button.Location = new System.Drawing.Point(923, 326);
             this.C2_Button.Name = "C2_Button";
-            this.C2_Button.Size = new System.Drawing.Size(140, 140);
+            this.C2_Button.Size = new System.Drawing.Size(119, 140);
             this.C2_Button.TabIndex = 6;
             this.C2_Button.Text = "EM Battery";
             this.C2_Button.UseVisualStyleBackColor = false;
+            this.C2_Button.Click += new System.EventHandler(this.C2_Button_Click);
             // 
             // C3_Button
             // 
@@ -111,10 +123,11 @@ namespace KleeMains
             this.C3_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.C3_Button.Location = new System.Drawing.Point(923, 486);
             this.C3_Button.Name = "C3_Button";
-            this.C3_Button.Size = new System.Drawing.Size(140, 140);
+            this.C3_Button.Size = new System.Drawing.Size(119, 140);
             this.C3_Button.TabIndex = 7;
             this.C3_Button.Text = "Healer";
             this.C3_Button.UseVisualStyleBackColor = false;
+            this.C3_Button.Click += new System.EventHandler(this.C3_Button_Click);
             // 
             // ToolBar
             // 
@@ -256,7 +269,111 @@ namespace KleeMains
             this.generatePartyReportButtonUI.TabIndex = 19;
             this.generatePartyReportButtonUI.Text = "Generate Party Report";
             this.generatePartyReportButtonUI.UseVisualStyleBackColor = false;
-            this.generatePartyReportButtonUI.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // partySugestionUIButton
+            // 
+            this.partySugestionUIButton.ForeColor = System.Drawing.Color.Black;
+            this.partySugestionUIButton.Location = new System.Drawing.Point(1048, 13);
+            this.partySugestionUIButton.Name = "partySugestionUIButton";
+            this.partySugestionUIButton.Size = new System.Drawing.Size(22, 23);
+            this.partySugestionUIButton.TabIndex = 20;
+            this.partySugestionUIButton.Text = "?";
+            this.partySugestionUIButton.UseVisualStyleBackColor = true;
+            // 
+            // partyStatsHelpUIButton
+            // 
+            this.partyStatsHelpUIButton.ForeColor = System.Drawing.Color.Black;
+            this.partyStatsHelpUIButton.Location = new System.Drawing.Point(542, 16);
+            this.partyStatsHelpUIButton.Name = "partyStatsHelpUIButton";
+            this.partyStatsHelpUIButton.Size = new System.Drawing.Size(22, 23);
+            this.partyStatsHelpUIButton.TabIndex = 21;
+            this.partyStatsHelpUIButton.Text = "?";
+            this.partyStatsHelpUIButton.UseVisualStyleBackColor = true;
+            // 
+            // partyElementalResUIDummy
+            // 
+            this.partyElementalResUIDummy.BackColor = System.Drawing.Color.Transparent;
+            this.partyElementalResUIDummy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.partyElementalResUIDummy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.partyElementalResUIDummy.Location = new System.Drawing.Point(26, 93);
+            this.partyElementalResUIDummy.Name = "partyElementalResUIDummy";
+            this.partyElementalResUIDummy.Size = new System.Drawing.Size(170, 29);
+            this.partyElementalResUIDummy.TabIndex = 22;
+            this.partyElementalResUIDummy.Text = "Elemental Resonance:";
+            this.partyElementalResUIDummy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // elementalResUIText
+            // 
+            this.elementalResUIText.BackColor = System.Drawing.Color.Transparent;
+            this.elementalResUIText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.elementalResUIText.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.elementalResUIText.Location = new System.Drawing.Point(187, 93);
+            this.elementalResUIText.Name = "elementalResUIText";
+            this.elementalResUIText.Size = new System.Drawing.Size(118, 29);
+            this.elementalResUIText.TabIndex = 23;
+            this.elementalResUIText.Text = "Dendro/Anemo";
+            this.elementalResUIText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // maxDMGUIDummy
+            // 
+            this.maxDMGUIDummy.BackColor = System.Drawing.Color.Transparent;
+            this.maxDMGUIDummy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maxDMGUIDummy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.maxDMGUIDummy.Location = new System.Drawing.Point(26, 221);
+            this.maxDMGUIDummy.Name = "maxDMGUIDummy";
+            this.maxDMGUIDummy.Size = new System.Drawing.Size(170, 29);
+            this.maxDMGUIDummy.TabIndex = 24;
+            this.maxDMGUIDummy.Text = "Max Theoretical DMG:";
+            this.maxDMGUIDummy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // maxDMGUIText
+            // 
+            this.maxDMGUIText.BackColor = System.Drawing.Color.Transparent;
+            this.maxDMGUIText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maxDMGUIText.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.maxDMGUIText.Location = new System.Drawing.Point(187, 221);
+            this.maxDMGUIText.Name = "maxDMGUIText";
+            this.maxDMGUIText.Size = new System.Drawing.Size(118, 29);
+            this.maxDMGUIText.TabIndex = 25;
+            this.maxDMGUIText.Text = "99999999999";
+            this.maxDMGUIText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // saveCurrentPartyUIButton
+            // 
+            this.saveCurrentPartyUIButton.BackColor = System.Drawing.Color.DarkGreen;
+            this.saveCurrentPartyUIButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.saveCurrentPartyUIButton.FlatAppearance.BorderSize = 0;
+            this.saveCurrentPartyUIButton.ForeColor = System.Drawing.Color.Yellow;
+            this.saveCurrentPartyUIButton.Location = new System.Drawing.Point(624, 618);
+            this.saveCurrentPartyUIButton.Name = "saveCurrentPartyUIButton";
+            this.saveCurrentPartyUIButton.Size = new System.Drawing.Size(177, 35);
+            this.saveCurrentPartyUIButton.TabIndex = 26;
+            this.saveCurrentPartyUIButton.Text = "Save Current Party";
+            this.saveCurrentPartyUIButton.UseVisualStyleBackColor = false;
+            // 
+            // totalMoraCostUIDummy
+            // 
+            this.totalMoraCostUIDummy.BackColor = System.Drawing.Color.Transparent;
+            this.totalMoraCostUIDummy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.totalMoraCostUIDummy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.totalMoraCostUIDummy.Location = new System.Drawing.Point(26, 192);
+            this.totalMoraCostUIDummy.Name = "totalMoraCostUIDummy";
+            this.totalMoraCostUIDummy.Size = new System.Drawing.Size(170, 29);
+            this.totalMoraCostUIDummy.TabIndex = 27;
+            this.totalMoraCostUIDummy.Text = "Total Mora Cost: ";
+            this.totalMoraCostUIDummy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // totalMoraCostUIText
+            // 
+            this.totalMoraCostUIText.BackColor = System.Drawing.Color.Transparent;
+            this.totalMoraCostUIText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.totalMoraCostUIText.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.totalMoraCostUIText.Location = new System.Drawing.Point(187, 192);
+            this.totalMoraCostUIText.Name = "totalMoraCostUIText";
+            this.totalMoraCostUIText.Size = new System.Drawing.Size(118, 29);
+            this.totalMoraCostUIText.TabIndex = 28;
+            this.totalMoraCostUIText.Text = "99999999999";
+            this.totalMoraCostUIText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainFrame
             // 
@@ -265,6 +382,15 @@ namespace KleeMains
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1117, 657);
+            this.Controls.Add(this.totalMoraCostUIText);
+            this.Controls.Add(this.totalMoraCostUIDummy);
+            this.Controls.Add(this.saveCurrentPartyUIButton);
+            this.Controls.Add(this.maxDMGUIText);
+            this.Controls.Add(this.maxDMGUIDummy);
+            this.Controls.Add(this.elementalResUIText);
+            this.Controls.Add(this.partyElementalResUIDummy);
+            this.Controls.Add(this.partyStatsHelpUIButton);
+            this.Controls.Add(this.partySugestionUIButton);
             this.Controls.Add(this.generatePartyReportButtonUI);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -315,6 +441,15 @@ namespace KleeMains
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button generatePartyReportButtonUI;
+        private System.Windows.Forms.Button partySugestionUIButton;
+        private System.Windows.Forms.Button partyStatsHelpUIButton;
+        private System.Windows.Forms.Label partyElementalResUIDummy;
+        private System.Windows.Forms.Label elementalResUIText;
+        private System.Windows.Forms.Label maxDMGUIDummy;
+        private System.Windows.Forms.Label maxDMGUIText;
+        private System.Windows.Forms.Button saveCurrentPartyUIButton;
+        private System.Windows.Forms.Label totalMoraCostUIDummy;
+        private System.Windows.Forms.Label totalMoraCostUIText;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KleeMains
 {
-    enum Elements { Cryo, Pyro, Hydro, Eletro, Anemo, Geo, Dendro }
+    enum Elements { Cryo, Pyro, Hydro, Electro, Anemo, Geo, Dendro }
 
     class Character
     {
@@ -194,8 +194,21 @@ namespace KleeMains
                 
         }
 
+        public Roles getRole()
+        {
+            return this.role;
+        }
 
 
+        public string getTitle()
+        {
+            return this.title;
+        }
+
+        public Elements getElement()
+        {
+            return this.elementalAlignment;
+        }
 
 
 
