@@ -22,17 +22,45 @@ namespace KleeMains
         private Character currentChar = null;
         private Party currentParty = null;
 
+        //to save mem, set party images as vers and only change them when switching
+
+        List<System.Drawing.Image> buttomImages = new List<Image>();
+        List<System.Drawing.Image> charImages = new List<Image>();
+
+
         public MainFrame()
         {
             InitializeComponent();
-            //initial party, sets images
+
+
            
             currentParty = new Party();
-            C0_Button.Text = currentParty.getCharacters()[0].getName();
-            C1_Button.Text = currentParty.getCharacters()[1].getName();
-            C2_Button.Text = currentParty.getCharacters()[2].getName();
-            C3_Button.Text = currentParty.getCharacters()[3].getName();
+
+            this.currentChar = currentParty.getCharacters()[0];
+
+            this.charNameUIText.Text = currentChar.getName();
+            this.charTitleUIText.Text = currentChar.getTitle();
+
+            this.charSpriteUIImage.Image = System.Drawing.Image.FromFile(System.IO.Path.GetDirectoryName(Application.ExecutablePath) +
+                @"/Resources/Characters/" + currentChar.getName() + "/" + currentChar.getName() + "_Card.png");
+
+
+            for(int i = 0; i < 4; i++)
+            {
+                buttomImages.Add(System.Drawing.Image.FromFile(System.IO.Path.GetDirectoryName(Application.ExecutablePath) +
+               @"/Resources/Characters/" + currentParty.getCharacters()[i].getName() + "/" + currentParty.getCharacters()[i].getName() + "_Thumb.png"));
+                charImages.Add(System.Drawing.Image.FromFile(System.IO.Path.GetDirectoryName(Application.ExecutablePath) +
+               @"/Resources/Characters/" + currentParty.getCharacters()[i].getName() + "/" + currentParty.getCharacters()[i].getName() + "_Card.png"));
+            }
             
+            C0_Button.BackgroundImage = buttomImages[0];
+            C1_Button.BackgroundImage = buttomImages[1];
+            C2_Button.BackgroundImage = buttomImages[2];
+            C3_Button.BackgroundImage = buttomImages[3];
+
+
+
+            changeBG();
         }
 
         private void MainFrame_Load(object sender, EventArgs e)
@@ -97,6 +125,9 @@ namespace KleeMains
             this.currentChar = this.currentParty.getCharacters()[0];
             this.charNameUIText.Text = this.currentChar.getName();
             this.charTitleUIText.Text = this.currentChar.getTitle();
+
+            this.charSpriteUIImage.Image = charImages[0];
+            C0_Button.BackgroundImage = buttomImages[0];
             //set images
             changeBG();
 
@@ -107,6 +138,10 @@ namespace KleeMains
             this.currentChar = this.currentParty.getCharacters()[1];
             this.charNameUIText.Text = this.currentChar.getName();
             this.charTitleUIText.Text = this.currentChar.getTitle();
+
+            this.charSpriteUIImage.Image = charImages[1];
+            C1_Button.BackgroundImage = buttomImages[1];
+
             //set images
             changeBG();
         }
@@ -116,6 +151,9 @@ namespace KleeMains
             this.currentChar = this.currentParty.getCharacters()[2];
             this.charNameUIText.Text = this.currentChar.getName();
             this.charTitleUIText.Text = this.currentChar.getTitle();
+
+            this.charSpriteUIImage.Image = charImages[2];
+            C2_Button.BackgroundImage = buttomImages[2];
             //set images
             changeBG();
         }
@@ -125,6 +163,9 @@ namespace KleeMains
             this.currentChar = this.currentParty.getCharacters()[3];
             this.charNameUIText.Text = this.currentChar.getName();
             this.charTitleUIText.Text = this.currentChar.getTitle();
+
+            this.charSpriteUIImage.Image = charImages[3];
+            C3_Button.BackgroundImage = buttomImages[3];
             //set images
             changeBG();
         }
@@ -145,7 +186,7 @@ namespace KleeMains
                     this.BackColor = System.Drawing.Color.SkyBlue;
                     break;
                 case Elements.Pyro:
-                    this.BackColor = System.Drawing.Color.Firebrick;
+                    this.BackColor = System.Drawing.Color.Maroon;
                     break;
                 case Elements.Hydro:
                     this.BackColor = System.Drawing.Color.DarkBlue;
@@ -167,8 +208,6 @@ namespace KleeMains
                     break;
             }
         }
-
-
     }
 
 
