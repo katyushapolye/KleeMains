@@ -210,6 +210,11 @@ namespace KleeMains
             return this.elementalAlignment;
         }
 
+        public bool getRarity()
+        {
+            return this.rarity;
+        }
+
 
 
 

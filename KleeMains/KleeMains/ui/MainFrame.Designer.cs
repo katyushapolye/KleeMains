@@ -76,7 +76,7 @@ namespace KleeMains
             // 
             // C0_Button
             // 
-            this.C0_Button.BackColor = System.Drawing.Color.DarkGray;
+            this.C0_Button.BackColor = System.Drawing.Color.DimGray;
             this.C0_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("C0_Button.BackgroundImage")));
             this.C0_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.C0_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
@@ -102,7 +102,7 @@ namespace KleeMains
             // 
             // C1_Button
             // 
-            this.C1_Button.BackColor = System.Drawing.Color.DarkGray;
+            this.C1_Button.BackColor = System.Drawing.Color.DimGray;
             this.C1_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.C1_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.C1_Button.Location = new System.Drawing.Point(923, 167);
@@ -114,7 +114,7 @@ namespace KleeMains
             // 
             // C2_Button
             // 
-            this.C2_Button.BackColor = System.Drawing.Color.DarkGray;
+            this.C2_Button.BackColor = System.Drawing.Color.DimGray;
             this.C2_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.C2_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.C2_Button.Location = new System.Drawing.Point(923, 326);
@@ -126,7 +126,7 @@ namespace KleeMains
             // 
             // C3_Button
             // 
-            this.C3_Button.BackColor = System.Drawing.Color.DarkGray;
+            this.C3_Button.BackColor = System.Drawing.Color.DimGray;
             this.C3_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.C3_Button.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.C3_Button.Location = new System.Drawing.Point(923, 486);
@@ -280,7 +280,7 @@ namespace KleeMains
             // partySugestionUIButton
             // 
             this.partySugestionUIButton.ForeColor = System.Drawing.Color.Black;
-            this.partySugestionUIButton.Location = new System.Drawing.Point(1043, 13);
+            this.partySugestionUIButton.Location = new System.Drawing.Point(1050, 12);
             this.partySugestionUIButton.Name = "partySugestionUIButton";
             this.partySugestionUIButton.Size = new System.Drawing.Size(22, 23);
             this.partySugestionUIButton.TabIndex = 20;
@@ -454,12 +454,12 @@ namespace KleeMains
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1117, 657);
+            this.Controls.Add(this.totalMoraCostUIDummy);
+            this.Controls.Add(this.totalMoraCostUIText);
             this.Controls.Add(this.partyNameUIText);
             this.Controls.Add(this.partyNameUIDummy);
             this.Controls.Add(this.totalEXPCardCostUIText);
             this.Controls.Add(this.totalEXPCardCostUIDummy);
-            this.Controls.Add(this.totalMoraCostUIText);
-            this.Controls.Add(this.totalMoraCostUIDummy);
             this.Controls.Add(this.saveCurrentPartyUIButton);
             this.Controls.Add(this.maxDMGUIText);
             this.Controls.Add(this.maxDMGUIDummy);

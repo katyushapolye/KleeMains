@@ -41,7 +41,6 @@ namespace KleeMains
                             continue;
                         }
                         this.characters[0] = Program.characters[i];
-                        Console.WriteLine(this.characters[0].getName());
                         this.currentCharCount++;
                         break;
                     case Character.Roles.SubDPS:
@@ -82,6 +81,12 @@ namespace KleeMains
         Report generatePartyReport() {
 
             return null;
+        }
+
+
+        bool changeCharacter(Character character, int index)
+        {
+            return false;
         }
 
         public List<Character> getCharacters()

@@ -28,7 +28,7 @@ namespace KleeMains
         void selectChar(object sender, EventArgs e)
         {
             Button b = sender as Button;
-            Console.WriteLine(b.Text);
+            Console.WriteLine(Program.characters[b.TabIndex].getName());
 
 
         }

@@ -1,19 +1,22 @@
-﻿
+﻿using System;
 using System.Collections.Generic;
-
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
 namespace KleeMains
 {
     partial class CharSelection
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -23,15 +26,11 @@ namespace KleeMains
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.charPanel = new System.Windows.Forms.FlowLayoutPanel();
+    
+            
 
             //ALL CHARS BUTTONS
             for(int i = 0; i < Program.characters.Count; i++)
@@ -40,15 +39,13 @@ namespace KleeMains
             }
             
 
-            //end
+   
 
 
             this.charPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // charPanel
-            // 
-            this.charPanel.AutoScroll = true;
+        
+            this.charPanel.AutoScroll = true;    
             this.charPanel.BackColor = System.Drawing.SystemColors.ControlLight;
             for (int i = 0; i < Program.characters.Count; i++)
             {
@@ -58,7 +55,7 @@ namespace KleeMains
             this.charPanel.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
             this.charPanel.Location = new System.Drawing.Point(12, 12);
             this.charPanel.Name = "charPanel";
-            this.charPanel.Size = new System.Drawing.Size(776, 424);
+            this.charPanel.Size = new System.Drawing.Size(690, 424);
             this.charPanel.TabIndex = 0;
             // 
             // setting configs for buttons
@@ -76,13 +73,21 @@ namespace KleeMains
 
                     this.buttons[buttoncount].Location = new System.Drawing.Point(3 , 3);
                     this.buttons[buttoncount].Name = "button"+buttoncount.ToString();
-                    this.buttons[buttoncount].Size = new System.Drawing.Size(91, 106);
+                    this.buttons[buttoncount].Size = new System.Drawing.Size(109, 127); //91,106
                     this.buttons[buttoncount].TabIndex = buttoncount;
-                    this.buttons[buttoncount].Text = Program.characters[buttoncount].getName();
                     this.buttons[buttoncount].UseVisualStyleBackColor = true;
                     this.buttons[buttoncount].Click += new System.EventHandler(this.selectChar);
-                    //add char card
-                    //this.buttons[buttoncount].Image = 
+                    this.buttons[buttoncount].BackgroundImageLayout = ImageLayout.Stretch;
+                    this.buttons[buttoncount].BackgroundImage = System.Drawing.Image.FromFile(System.IO.Path.GetDirectoryName(Application.ExecutablePath) +
+               @"/Resources/Characters/" + Program.characters[buttoncount].getName() + "/" + Program.characters[buttoncount].getName() + "_Thumb.png");
+                    if (Program.characters[buttoncount].getRarity())
+                    {
+                        this.buttons[buttoncount].BackColor = System.Drawing.Color.DarkGoldenrod;
+                    }
+                    else
+                    {
+                        this.buttons[buttoncount].BackColor = System.Drawing.Color.MediumPurple;
+                    }
                     buttoncount++;
                     
                 }
@@ -102,7 +107,8 @@ namespace KleeMains
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(715, 450);
+            this.FormBorderStyle = FormBorderStyle.None;
             this.Controls.Add(this.charPanel);
             this.Name = "CharSelection";
             this.Text = "Form1";
@@ -111,7 +117,6 @@ namespace KleeMains
 
         }
 
-        #endregion
 
         private System.Windows.Forms.FlowLayoutPanel charPanel;
         private List<System.Windows.Forms.Button> buttons =  new List<System.Windows.Forms.Button>();
