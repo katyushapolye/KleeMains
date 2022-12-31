@@ -21,46 +21,36 @@ namespace KleeMains
 
         private Character currentChar = null;
         private Party currentParty = null;
+        int currentCharIndex = 0;
+        bool selectingChars = false;
+     
 
         //to save mem, set party images as vers and only change them when switching
 
-        List<System.Drawing.Image> buttomImages = new List<Image>();
-        List<System.Drawing.Image> charImages = new List<Image>();
+        List<System.Drawing.Image> buttomImages = new List<Image>(4);
+        List<System.Drawing.Image> charImages = new List<Image>(4);
 
 
         public MainFrame()
         {
             InitializeComponent();
-
-
-           
-            currentParty = new Party();
-
-            this.currentChar = currentParty.getCharacters()[0];
-
-            this.charNameUIText.Text = currentChar.getName();
-            this.charTitleUIText.Text = currentChar.getTitle();
-
-            this.charSpriteUIImage.Image = System.Drawing.Image.FromFile(System.IO.Path.GetDirectoryName(Application.ExecutablePath) +
-                @"/Resources/Characters/" + currentChar.getName() + "/" + currentChar.getName() + "_Card.png");
-
-
-            for(int i = 0; i < 4; i++)
+            for(int i  = 0; i < 4; i++)
             {
-                buttomImages.Add(System.Drawing.Image.FromFile(System.IO.Path.GetDirectoryName(Application.ExecutablePath) +
-               @"/Resources/Characters/" + currentParty.getCharacters()[i].getName() + "/" + currentParty.getCharacters()[i].getName() + "_Thumb.png"));
-                charImages.Add(System.Drawing.Image.FromFile(System.IO.Path.GetDirectoryName(Application.ExecutablePath) +
-               @"/Resources/Characters/" + currentParty.getCharacters()[i].getName() + "/" + currentParty.getCharacters()[i].getName() + "_Card.png"));
+                buttomImages.Add(null);
+                charImages.Add(null);
             }
+            currentParty = Party.getCurrentParty();
+
+
+
+            updateUI(true);
+
             
-            C0_Button.BackgroundImage = buttomImages[0];
-            C1_Button.BackgroundImage = buttomImages[1];
-            C2_Button.BackgroundImage = buttomImages[2];
-            C3_Button.BackgroundImage = buttomImages[3];
+            
 
 
 
-            changeBG();
+
         }
 
         private void MainFrame_Load(object sender, EventArgs e)
@@ -100,9 +90,10 @@ namespace KleeMains
 
         //Toolbar slide end
 
-        private void openCharSeletion()
+        private void openCharSeletion(int index)
         {
-            CharSelection charSelection = new CharSelection();
+            CharSelection charSelection = new CharSelection(index,this);
+           
             //pass a flag for which switch is
 
             charSelection.Show();
@@ -110,66 +101,146 @@ namespace KleeMains
 
         }
 
+        public void updateUI(bool hardUpdate)
+        {
+            selectingChars = false;
+            if (hardUpdate)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    buttomImages[i] = (System.Drawing.Image.FromFile(System.IO.Path.GetDirectoryName(Application.ExecutablePath) +
+                   @"/Resources/Characters/" + currentParty.getCharacters()[i].getName() + "/" + currentParty.getCharacters()[i].getName() + "_Thumb.png"));
+                    charImages[i] = (System.Drawing.Image.FromFile(System.IO.Path.GetDirectoryName(Application.ExecutablePath) +
+                   @"/Resources/Characters/" + currentParty.getCharacters()[i].getName() + "/" + currentParty.getCharacters()[i].getName() + "_Card.png"));
+
+
+                }
+
+                C0_Button.BackgroundImage = buttomImages[0];
+                C1_Button.BackgroundImage = buttomImages[1];
+                C2_Button.BackgroundImage = buttomImages[2];
+                C3_Button.BackgroundImage = buttomImages[3];
+            }
+
+            this.charSpriteUIImage.Image = charImages[currentCharIndex];
+
+            this.partyNameUIText.Text = currentParty.getPartyName();
+            
+            this.currentChar = currentParty.getCharacters()[currentCharIndex];
+            this.charNameUIText.Text = separateWords(currentChar.getName());
+            this.charTitleUIText.Text = currentChar.getTitle();
+            this.charBaseATKUIText.Text = currentChar.getbaseATK().ToString();
+            this.charBaseHPUIText.Text = currentChar.getbaseHP().ToString();
+            this.charBaseDEFUIText.Text = currentChar.getbaseDEF().ToString();
+            this.charBestWeaponText.Text =  separateWords(currentChar.getWeapon().getName());
+            this.charCommonMaterialsText.Text = separateWords(currentChar.getCommonT1().ToString()); //nao cabe + "/" + separateWords(currentChar.getCommonT2()) + "/" + separateWords(currentChar.getCommonT3());
+            this.charCollectableMaterialsText.Text = separateWords(currentChar.getCollactable().ToString());
+            this.charTalentMaterialsText.Text = separateWords(currentChar.getTalent().ToString());
+            this.charAscensionBonusText.Text = separateWords(currentChar.getAscensionBonus());
+
+            this.elementalResUIText.Text = "";
+            
+
+            for (int i = 0; i < currentParty.getElementalRes().Count; i++)
+            {
+                
+                
+
+                this.elementalResUIText.Text += currentParty.getElementalRes()[i].ToString();
+                if (i == currentParty.getElementalRes().Count - 1) { break; }
+                this.elementalResUIText.Text += "/";
+
+            }
+
+
+            
+            changeBG();
+
+       }
+
+       
        
 
     
 
         private void C0_Switch_Click(object sender, EventArgs e)
         {
-            openCharSeletion();
+            if(selectingChars == true)
+            {
+                return;
+            }
+            selectingChars = true;
+            openCharSeletion(0);
+            currentCharIndex = 0;
+
+        }
+        private void C1_Switch_Click(object sender, EventArgs e)
+        {
+            if (selectingChars == true)
+            {
+                return;
+            }
+            selectingChars = true;
+            openCharSeletion(1);
+            currentCharIndex = 1;
+        }
+        private void C2_Switch_Click(object sender, EventArgs e)
+        {
+            if (selectingChars == true)
+            {
+                return;
+            }
+            selectingChars = true;
+            openCharSeletion(2);
+            currentCharIndex = 2;
+        }
+        private void C3_Switch_Click(object sender, EventArgs e)
+        {
+            if (selectingChars == true)
+            {
+                return;
+            }
+            selectingChars = true;
+            openCharSeletion(3);
+            currentCharIndex = 3;
 
         }
 
         private void C0_Button_Click(object sender, EventArgs e)
         {
-            this.currentChar = this.currentParty.getCharacters()[0];
-            this.charNameUIText.Text = this.currentChar.getName();
-            this.charTitleUIText.Text = this.currentChar.getTitle();
+            this.currentChar = currentParty.getCharacters()[0];
+            currentCharIndex = 0;
 
-            this.charSpriteUIImage.Image = charImages[0];
-            C0_Button.BackgroundImage = buttomImages[0];
-            //set images
-            changeBG();
+            updateUI(false);
 
         }
 
         private void C1_Button_Click(object sender, EventArgs e)
         {
-            this.currentChar = this.currentParty.getCharacters()[1];
-            this.charNameUIText.Text = this.currentChar.getName();
-            this.charTitleUIText.Text = this.currentChar.getTitle();
+            this.currentChar = currentParty.getCharacters()[1];
+            currentCharIndex = 1;
 
-            this.charSpriteUIImage.Image = charImages[1];
-            C1_Button.BackgroundImage = buttomImages[1];
-
-            //set images
-            changeBG();
+            updateUI(false);
         }
 
         private void C2_Button_Click(object sender, EventArgs e)
         {
-            this.currentChar = this.currentParty.getCharacters()[2];
-            this.charNameUIText.Text = this.currentChar.getName();
-            this.charTitleUIText.Text = this.currentChar.getTitle();
+            this.currentChar = currentParty.getCharacters()[2];
+            currentCharIndex = 2;
 
-            this.charSpriteUIImage.Image = charImages[2];
-            C2_Button.BackgroundImage = buttomImages[2];
-            //set images
-            changeBG();
+            updateUI(false);
         }
 
         private void C3_Button_Click(object sender, EventArgs e)
         {
-            this.currentChar = this.currentParty.getCharacters()[3];
-            this.charNameUIText.Text = this.currentChar.getName();
-            this.charTitleUIText.Text = this.currentChar.getTitle();
+            this.currentChar = currentParty.getCharacters()[3];
+            currentCharIndex = 3;
 
-            this.charSpriteUIImage.Image = charImages[3];
-            C3_Button.BackgroundImage = buttomImages[3];
-            //set images
-            changeBG();
+            updateUI(false);
         }
 
+
+   
 
 
 
@@ -207,6 +278,37 @@ namespace KleeMains
                 default:
                     break;
             }
+        }
+
+        private static string separateWords(string str)
+        {
+            string buffer = "";
+            for(int i  = 0; i < str.Length; i++)
+            {
+                if (Char.IsUpper(str, i) && i != 0)
+                {
+                    buffer += " ";
+                }
+                buffer += str[i];
+            }
+
+            return buffer;
+
+        }
+
+        private void partyStatsHelpUIButton_Click(object sender, EventArgs e)
+        {
+            ElementGuide elementGuide = new ElementGuide();
+            elementGuide.Show();
+
+
+        }
+
+        private void generatePartyReportButtonUI_Click(object sender, EventArgs e)
+        {
+            currentParty.generatePartyReport();
+            MessageBox.Show("Party Report successfully generated", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 

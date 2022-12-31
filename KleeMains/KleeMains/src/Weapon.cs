@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace KleeMains
 {
 
-    class Weapon
+    public class Weapon
     {
         public enum WeaponType { Catalyst,LongSword,Claymore,Bow,Polearm};
         public enum WeaponBonusType { PhysicalDMGBonus,ATKPercent,CritRate,CritDMG,HealthPercentage,EM,EnergyRecharge,DEFPercent}

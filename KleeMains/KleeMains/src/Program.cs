@@ -34,6 +34,7 @@ namespace KleeMains
             AllocConsole(); //debug only
             Database db = new Database("database.db");
             characters =  db.getAllCharacters();
+            Party p = new Party();
             
             
             
@@ -52,6 +53,20 @@ namespace KleeMains
             Application.Run(new MainFrame());
             
 
+        }
+
+        public static Character findCharinMemory(string name)
+        {
+            for (int i = 0; i < characters.Count; i++)
+            {
+
+                if (characters[i].getName() == name)
+                {
+                    return characters[i];
+                }
+            }
+
+            return null;
         }
     }
 }

@@ -67,6 +67,22 @@ namespace KleeMains
             this.totalEXPCardCostUIText = new System.Windows.Forms.Label();
             this.partyNameUIDummy = new System.Windows.Forms.Label();
             this.partyNameUIText = new System.Windows.Forms.Label();
+            this.charBaseATKUIDummy = new System.Windows.Forms.Label();
+            this.charBaseHPUIDummy = new System.Windows.Forms.Label();
+            this.charBaseDEFUIDummy = new System.Windows.Forms.Label();
+            this.bestWeaponInSlotUIDummy = new System.Windows.Forms.Label();
+            this.commonMaterialsUIDummy = new System.Windows.Forms.Label();
+            this.talentMaterialsUIDummy = new System.Windows.Forms.Label();
+            this.collectableMaterialsUIDummy = new System.Windows.Forms.Label();
+            this.ascensionBonusUIDummy = new System.Windows.Forms.Label();
+            this.charBaseATKUIText = new System.Windows.Forms.Label();
+            this.charBaseHPUIText = new System.Windows.Forms.Label();
+            this.charBaseDEFUIText = new System.Windows.Forms.Label();
+            this.charBestWeaponText = new System.Windows.Forms.Label();
+            this.charCommonMaterialsText = new System.Windows.Forms.Label();
+            this.charTalentMaterialsText = new System.Windows.Forms.Label();
+            this.charCollectableMaterialsText = new System.Windows.Forms.Label();
+            this.charAscensionBonusText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.charSpriteUIImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dummyBox1)).BeginInit();
@@ -195,6 +211,7 @@ namespace KleeMains
             this.C1_Switch.TabIndex = 12;
             this.C1_Switch.Text = "SwitchC1";
             this.C1_Switch.UseVisualStyleBackColor = false;
+            this.C1_Switch.Click += new System.EventHandler(this.C1_Switch_Click);
             // 
             // C2_Switch
             // 
@@ -205,6 +222,7 @@ namespace KleeMains
             this.C2_Switch.TabIndex = 13;
             this.C2_Switch.Text = "SwitchC1";
             this.C2_Switch.UseVisualStyleBackColor = false;
+            this.C2_Switch.Click += new System.EventHandler(this.C2_Switch_Click);
             // 
             // C3_Switch
             // 
@@ -215,6 +233,7 @@ namespace KleeMains
             this.C3_Switch.TabIndex = 14;
             this.C3_Switch.Text = "SwitchC1";
             this.C3_Switch.UseVisualStyleBackColor = false;
+            this.C3_Switch.Click += new System.EventHandler(this.C3_Switch_Click);
             // 
             // PartyTitleLabelUI
             // 
@@ -276,6 +295,7 @@ namespace KleeMains
             this.generatePartyReportButtonUI.TabIndex = 19;
             this.generatePartyReportButtonUI.Text = "Generate Party Report";
             this.generatePartyReportButtonUI.UseVisualStyleBackColor = false;
+            this.generatePartyReportButtonUI.Click += new System.EventHandler(this.generatePartyReportButtonUI_Click);
             // 
             // partySugestionUIButton
             // 
@@ -296,6 +316,7 @@ namespace KleeMains
             this.partyStatsHelpUIButton.TabIndex = 21;
             this.partyStatsHelpUIButton.Text = "?";
             this.partyStatsHelpUIButton.UseVisualStyleBackColor = true;
+            this.partyStatsHelpUIButton.Click += new System.EventHandler(this.partyStatsHelpUIButton_Click);
             // 
             // partyElementalResUIDummy
             // 
@@ -317,10 +338,10 @@ namespace KleeMains
             this.elementalResUIText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.elementalResUIText.Location = new System.Drawing.Point(187, 134);
             this.elementalResUIText.Name = "elementalResUIText";
-            this.elementalResUIText.Size = new System.Drawing.Size(118, 29);
+            this.elementalResUIText.Size = new System.Drawing.Size(153, 29);
             this.elementalResUIText.TabIndex = 23;
             this.elementalResUIText.Text = "Dendro/Electro";
-            this.elementalResUIText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.elementalResUIText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // maxDMGUIDummy
             // 
@@ -345,7 +366,7 @@ namespace KleeMains
             this.maxDMGUIText.Size = new System.Drawing.Size(118, 29);
             this.maxDMGUIText.TabIndex = 25;
             this.maxDMGUIText.Text = "99999999999";
-            this.maxDMGUIText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.maxDMGUIText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // saveCurrentPartyUIButton
             // 
@@ -382,8 +403,8 @@ namespace KleeMains
             this.totalMoraCostUIText.Name = "totalMoraCostUIText";
             this.totalMoraCostUIText.Size = new System.Drawing.Size(118, 29);
             this.totalMoraCostUIText.TabIndex = 28;
-            this.totalMoraCostUIText.Text = "99999999999";
-            this.totalMoraCostUIText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.totalMoraCostUIText.Text = "6,610,000";
+            this.totalMoraCostUIText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dummyBox3
             // 
@@ -420,8 +441,8 @@ namespace KleeMains
             this.totalEXPCardCostUIText.Name = "totalEXPCardCostUIText";
             this.totalEXPCardCostUIText.Size = new System.Drawing.Size(118, 29);
             this.totalEXPCardCostUIText.TabIndex = 31;
-            this.totalEXPCardCostUIText.Text = "99999999999";
-            this.totalEXPCardCostUIText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.totalEXPCardCostUIText.Text = "~420";
+            this.totalEXPCardCostUIText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // partyNameUIDummy
             // 
@@ -447,6 +468,206 @@ namespace KleeMains
             this.partyNameUIText.Text = "Raiden\'s National Team";
             this.partyNameUIText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // charBaseATKUIDummy
+            // 
+            this.charBaseATKUIDummy.BackColor = System.Drawing.Color.Transparent;
+            this.charBaseATKUIDummy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charBaseATKUIDummy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.charBaseATKUIDummy.Location = new System.Drawing.Point(26, 380);
+            this.charBaseATKUIDummy.Name = "charBaseATKUIDummy";
+            this.charBaseATKUIDummy.Size = new System.Drawing.Size(170, 29);
+            this.charBaseATKUIDummy.TabIndex = 34;
+            this.charBaseATKUIDummy.Text = "Base ATK:";
+            this.charBaseATKUIDummy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // charBaseHPUIDummy
+            // 
+            this.charBaseHPUIDummy.BackColor = System.Drawing.Color.Transparent;
+            this.charBaseHPUIDummy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charBaseHPUIDummy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.charBaseHPUIDummy.Location = new System.Drawing.Point(26, 409);
+            this.charBaseHPUIDummy.Name = "charBaseHPUIDummy";
+            this.charBaseHPUIDummy.Size = new System.Drawing.Size(170, 29);
+            this.charBaseHPUIDummy.TabIndex = 35;
+            this.charBaseHPUIDummy.Text = "Base HP:";
+            this.charBaseHPUIDummy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // charBaseDEFUIDummy
+            // 
+            this.charBaseDEFUIDummy.BackColor = System.Drawing.Color.Transparent;
+            this.charBaseDEFUIDummy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charBaseDEFUIDummy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.charBaseDEFUIDummy.Location = new System.Drawing.Point(26, 438);
+            this.charBaseDEFUIDummy.Name = "charBaseDEFUIDummy";
+            this.charBaseDEFUIDummy.Size = new System.Drawing.Size(170, 29);
+            this.charBaseDEFUIDummy.TabIndex = 36;
+            this.charBaseDEFUIDummy.Text = "Base DEF:";
+            this.charBaseDEFUIDummy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // bestWeaponInSlotUIDummy
+            // 
+            this.bestWeaponInSlotUIDummy.BackColor = System.Drawing.Color.Transparent;
+            this.bestWeaponInSlotUIDummy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bestWeaponInSlotUIDummy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.bestWeaponInSlotUIDummy.Location = new System.Drawing.Point(26, 467);
+            this.bestWeaponInSlotUIDummy.Name = "bestWeaponInSlotUIDummy";
+            this.bestWeaponInSlotUIDummy.Size = new System.Drawing.Size(170, 29);
+            this.bestWeaponInSlotUIDummy.TabIndex = 37;
+            this.bestWeaponInSlotUIDummy.Text = "Best Weapon: ";
+            this.bestWeaponInSlotUIDummy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // commonMaterialsUIDummy
+            // 
+            this.commonMaterialsUIDummy.BackColor = System.Drawing.Color.Transparent;
+            this.commonMaterialsUIDummy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.commonMaterialsUIDummy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.commonMaterialsUIDummy.Location = new System.Drawing.Point(26, 496);
+            this.commonMaterialsUIDummy.Name = "commonMaterialsUIDummy";
+            this.commonMaterialsUIDummy.Size = new System.Drawing.Size(170, 29);
+            this.commonMaterialsUIDummy.TabIndex = 38;
+            this.commonMaterialsUIDummy.Text = "Common Materials:";
+            this.commonMaterialsUIDummy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // talentMaterialsUIDummy
+            // 
+            this.talentMaterialsUIDummy.BackColor = System.Drawing.Color.Transparent;
+            this.talentMaterialsUIDummy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.talentMaterialsUIDummy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.talentMaterialsUIDummy.Location = new System.Drawing.Point(26, 525);
+            this.talentMaterialsUIDummy.Name = "talentMaterialsUIDummy";
+            this.talentMaterialsUIDummy.Size = new System.Drawing.Size(170, 29);
+            this.talentMaterialsUIDummy.TabIndex = 39;
+            this.talentMaterialsUIDummy.Text = "Talent Materials: ";
+            this.talentMaterialsUIDummy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // collectableMaterialsUIDummy
+            // 
+            this.collectableMaterialsUIDummy.BackColor = System.Drawing.Color.Transparent;
+            this.collectableMaterialsUIDummy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.collectableMaterialsUIDummy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.collectableMaterialsUIDummy.Location = new System.Drawing.Point(26, 554);
+            this.collectableMaterialsUIDummy.Name = "collectableMaterialsUIDummy";
+            this.collectableMaterialsUIDummy.Size = new System.Drawing.Size(170, 29);
+            this.collectableMaterialsUIDummy.TabIndex = 40;
+            this.collectableMaterialsUIDummy.Text = "Collectable Materials:";
+            this.collectableMaterialsUIDummy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ascensionBonusUIDummy
+            // 
+            this.ascensionBonusUIDummy.BackColor = System.Drawing.Color.Transparent;
+            this.ascensionBonusUIDummy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ascensionBonusUIDummy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ascensionBonusUIDummy.Location = new System.Drawing.Point(26, 583);
+            this.ascensionBonusUIDummy.Name = "ascensionBonusUIDummy";
+            this.ascensionBonusUIDummy.Size = new System.Drawing.Size(170, 29);
+            this.ascensionBonusUIDummy.TabIndex = 41;
+            this.ascensionBonusUIDummy.Text = "Ascension Bonus: ";
+            this.ascensionBonusUIDummy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // charBaseATKUIText
+            // 
+            this.charBaseATKUIText.BackColor = System.Drawing.Color.Transparent;
+            this.charBaseATKUIText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charBaseATKUIText.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.charBaseATKUIText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.charBaseATKUIText.Location = new System.Drawing.Point(187, 380);
+            this.charBaseATKUIText.Name = "charBaseATKUIText";
+            this.charBaseATKUIText.Size = new System.Drawing.Size(118, 29);
+            this.charBaseATKUIText.TabIndex = 42;
+            this.charBaseATKUIText.Text = "99999999999";
+            this.charBaseATKUIText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // charBaseHPUIText
+            // 
+            this.charBaseHPUIText.BackColor = System.Drawing.Color.Transparent;
+            this.charBaseHPUIText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charBaseHPUIText.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.charBaseHPUIText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.charBaseHPUIText.Location = new System.Drawing.Point(187, 409);
+            this.charBaseHPUIText.Name = "charBaseHPUIText";
+            this.charBaseHPUIText.Size = new System.Drawing.Size(118, 29);
+            this.charBaseHPUIText.TabIndex = 43;
+            this.charBaseHPUIText.Text = "99999999999";
+            this.charBaseHPUIText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // charBaseDEFUIText
+            // 
+            this.charBaseDEFUIText.BackColor = System.Drawing.Color.Transparent;
+            this.charBaseDEFUIText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charBaseDEFUIText.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.charBaseDEFUIText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.charBaseDEFUIText.Location = new System.Drawing.Point(187, 438);
+            this.charBaseDEFUIText.Name = "charBaseDEFUIText";
+            this.charBaseDEFUIText.Size = new System.Drawing.Size(118, 29);
+            this.charBaseDEFUIText.TabIndex = 44;
+            this.charBaseDEFUIText.Text = "99999999999";
+            this.charBaseDEFUIText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // charBestWeaponText
+            // 
+            this.charBestWeaponText.BackColor = System.Drawing.Color.Transparent;
+            this.charBestWeaponText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charBestWeaponText.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.charBestWeaponText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.charBestWeaponText.Location = new System.Drawing.Point(187, 467);
+            this.charBestWeaponText.Name = "charBestWeaponText";
+            this.charBestWeaponText.Size = new System.Drawing.Size(273, 29);
+            this.charBestWeaponText.TabIndex = 45;
+            this.charBestWeaponText.Text = "StaffOfHoma";
+            this.charBestWeaponText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // charCommonMaterialsText
+            // 
+            this.charCommonMaterialsText.BackColor = System.Drawing.Color.Transparent;
+            this.charCommonMaterialsText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charCommonMaterialsText.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.charCommonMaterialsText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.charCommonMaterialsText.Location = new System.Drawing.Point(187, 496);
+            this.charCommonMaterialsText.Name = "charCommonMaterialsText";
+            this.charCommonMaterialsText.Size = new System.Drawing.Size(362, 29);
+            this.charCommonMaterialsText.TabIndex = 46;
+            this.charCommonMaterialsText.Text = "dummy/dummy/dummy";
+            this.charCommonMaterialsText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // charTalentMaterialsText
+            // 
+            this.charTalentMaterialsText.BackColor = System.Drawing.Color.Transparent;
+            this.charTalentMaterialsText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charTalentMaterialsText.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.charTalentMaterialsText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.charTalentMaterialsText.Location = new System.Drawing.Point(187, 525);
+            this.charTalentMaterialsText.Name = "charTalentMaterialsText";
+            this.charTalentMaterialsText.Size = new System.Drawing.Size(273, 29);
+            this.charTalentMaterialsText.TabIndex = 47;
+            this.charTalentMaterialsText.Text = "dummy";
+            this.charTalentMaterialsText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // charCollectableMaterialsText
+            // 
+            this.charCollectableMaterialsText.BackColor = System.Drawing.Color.Transparent;
+            this.charCollectableMaterialsText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charCollectableMaterialsText.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.charCollectableMaterialsText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.charCollectableMaterialsText.Location = new System.Drawing.Point(187, 554);
+            this.charCollectableMaterialsText.Name = "charCollectableMaterialsText";
+            this.charCollectableMaterialsText.Size = new System.Drawing.Size(273, 29);
+            this.charCollectableMaterialsText.TabIndex = 48;
+            this.charCollectableMaterialsText.Text = "dummy";
+            this.charCollectableMaterialsText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // charAscensionBonusText
+            // 
+            this.charAscensionBonusText.BackColor = System.Drawing.Color.Transparent;
+            this.charAscensionBonusText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charAscensionBonusText.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.charAscensionBonusText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.charAscensionBonusText.Location = new System.Drawing.Point(187, 583);
+            this.charAscensionBonusText.Name = "charAscensionBonusText";
+            this.charAscensionBonusText.Size = new System.Drawing.Size(273, 29);
+            this.charAscensionBonusText.TabIndex = 49;
+            this.charAscensionBonusText.Text = "dummy";
+            this.charAscensionBonusText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // MainFrame
             // 
             this.AllowDrop = true;
@@ -454,8 +675,24 @@ namespace KleeMains
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1117, 657);
-            this.Controls.Add(this.totalMoraCostUIDummy);
             this.Controls.Add(this.totalMoraCostUIText);
+            this.Controls.Add(this.charAscensionBonusText);
+            this.Controls.Add(this.charCollectableMaterialsText);
+            this.Controls.Add(this.charTalentMaterialsText);
+            this.Controls.Add(this.charCommonMaterialsText);
+            this.Controls.Add(this.charBestWeaponText);
+            this.Controls.Add(this.charBaseDEFUIText);
+            this.Controls.Add(this.charBaseHPUIText);
+            this.Controls.Add(this.charBaseATKUIText);
+            this.Controls.Add(this.ascensionBonusUIDummy);
+            this.Controls.Add(this.collectableMaterialsUIDummy);
+            this.Controls.Add(this.talentMaterialsUIDummy);
+            this.Controls.Add(this.commonMaterialsUIDummy);
+            this.Controls.Add(this.bestWeaponInSlotUIDummy);
+            this.Controls.Add(this.charBaseDEFUIDummy);
+            this.Controls.Add(this.charBaseHPUIDummy);
+            this.Controls.Add(this.charBaseATKUIDummy);
+            this.Controls.Add(this.totalMoraCostUIDummy);
             this.Controls.Add(this.partyNameUIText);
             this.Controls.Add(this.partyNameUIDummy);
             this.Controls.Add(this.totalEXPCardCostUIText);
@@ -533,6 +770,22 @@ namespace KleeMains
         private System.Windows.Forms.Label totalEXPCardCostUIText;
         private System.Windows.Forms.Label partyNameUIDummy;
         private System.Windows.Forms.Label partyNameUIText;
+        private System.Windows.Forms.Label charBaseATKUIDummy;
+        private System.Windows.Forms.Label charBaseHPUIDummy;
+        private System.Windows.Forms.Label charBaseDEFUIDummy;
+        private System.Windows.Forms.Label bestWeaponInSlotUIDummy;
+        private System.Windows.Forms.Label commonMaterialsUIDummy;
+        private System.Windows.Forms.Label talentMaterialsUIDummy;
+        private System.Windows.Forms.Label collectableMaterialsUIDummy;
+        private System.Windows.Forms.Label ascensionBonusUIDummy;
+        private System.Windows.Forms.Label charBaseATKUIText;
+        private System.Windows.Forms.Label charBaseHPUIText;
+        private System.Windows.Forms.Label charBaseDEFUIText;
+        private System.Windows.Forms.Label charBestWeaponText;
+        private System.Windows.Forms.Label charCommonMaterialsText;
+        private System.Windows.Forms.Label charTalentMaterialsText;
+        private System.Windows.Forms.Label charCollectableMaterialsText;
+        private System.Windows.Forms.Label charAscensionBonusText;
     }
 }
 

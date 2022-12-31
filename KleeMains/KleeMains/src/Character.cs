@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace KleeMains
 {
-    enum Elements { Cryo, Pyro, Hydro, Electro, Anemo, Geo, Dendro }
+    public enum Elements { Cryo, Pyro, Hydro, Electro, Anemo, Geo, Dendro } 
 
-    class Character
+    public class Character
     {
         //static shit
      
@@ -188,6 +188,19 @@ namespace KleeMains
             return this.characterWeapon;
         }
 
+        public int getbaseATK()
+        {
+            return this.baseATK;
+        }
+        public int getbaseDEF()
+        {
+            return this.baseDEF;
+        }
+        public int getbaseHP()
+        {
+            return this.baseHealth;
+        }
+
         public string getName()
         {
             return this.name;
@@ -215,6 +228,45 @@ namespace KleeMains
             return this.rarity;
         }
 
+        public CommonMaterialT1 getCommonT1()
+        {
+            return this.commonMaterialT1;
+
+        }
+        public CommonMaterialT2 getCommonT2()
+        {
+            return this.commonMaterialT2;
+
+        }
+        public CommonMaterialT3 getCommonT3()
+        {
+            return this.commonMaterialT3;
+
+        }
+        public CollectablesMaterials getCollactable()
+        {
+            return this.collectableMaterial;
+        }
+
+        public FarmableMaterials getFarmable()
+        {
+            return this.farmableMaterial;
+        }
+
+        public TalentMaterials getTalent()
+        {
+            return this.talentMaterial;
+
+        }
+        public TalentAscensionMaterial getTalentAscension()
+        {
+            return this.talentAscensionMaterial;
+        }
+
+        public string getAscensionBonus()
+        {
+            return this.ascensionBonus.ToString();
+        }
 
 
 
