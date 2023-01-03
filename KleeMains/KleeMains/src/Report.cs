@@ -21,11 +21,10 @@ namespace KleeMains
 
 
 
-
-        
-
+        Dictionary<Character.Roles, int> roles = new Dictionary<Character.Roles, int>();
 
         Dictionary<Elements,int> elementalResonance = new Dictionary<Elements, int>();
+        Dictionary<Elements, int> elementalAligments = new Dictionary<Elements, int>();
         Dictionary<Character.TalentMaterials,int> talentMaterials = new Dictionary<Character.TalentMaterials, int>();
         Dictionary<Character.TalentAscensionMaterial,int> talentMaterialsAscension =  new Dictionary<Character.TalentAscensionMaterial, int>();
         Dictionary<Character.CommonMaterialT1,int> t1Materials = new Dictionary<Character.CommonMaterialT1, int>();
@@ -44,6 +43,28 @@ namespace KleeMains
             file.WriteLine("Total EXP Cards Necessary: 1680" );
             file.WriteLine("Total Mora Cost: 1 680 000");
             file.WriteLine("Max Theoretical DMG: " + 99999.ToString()); //still need to calculate
+
+            for(int i = 0; i < 4; i++)
+            {
+                if (roles.ContainsKey(party.getCharacters()[i].getRole()))
+                {
+                    roles[party.getCharacters()[i].getRole()]++;
+                }
+                else
+                {
+                    roles.Add(party.getCharacters()[i].getRole(), 1);
+
+                }
+                if (elementalAligments.ContainsKey(party.getCharacters()[i].getElement()))
+                {
+                    elementalAligments[party.getCharacters()[i].getElement()]++;
+                }
+                else
+                {
+
+                    elementalAligments.Add(party.getCharacters()[i].getElement(), 1);
+                }
+            }
 
 
             for (int i = 0; i < party.getElementalRes().Count; i++){
@@ -162,10 +183,17 @@ namespace KleeMains
 
 
             }
-            file.WriteLine("---Stones: ");
-            for (int i = 0; i < farmableMaterials.Count; i++)
+            file.WriteLine("---STONES: ");
+            for (int i = 0; i < elementalAligments.Count; i++)
             {
-                
+                file.WriteLine("--" + elementalAligments.Keys.ToArray<Elements>()[i].ToString() +  "Stones");
+                file.WriteLine(1 * elementalAligments.Values.ToArray<int>()[i] + " Silver");
+                file.WriteLine(9 * elementalAligments.Values.ToArray<int>()[i] + " Fragment");
+                file.WriteLine(9 * elementalAligments.Values.ToArray<int>()[i] + " Chunk");
+                file.WriteLine(6 * elementalAligments.Values.ToArray<int>()[i] + " Gemstone");
+
+
+
             }
 
 
@@ -204,7 +232,73 @@ namespace KleeMains
 
 
             //needs farmimg days
-            file.WriteLine("TalentMaterial Costs");
+            file.WriteLine("---TALENT MATERIALS");
+            for (int i = 0; i < talentMaterials.Count; i++)
+            {
+                file.WriteLine("--" + talentMaterials.Keys.ToArray<Character.TalentMaterials>()[i].ToString());
+                file.WriteLine(9 * talentMaterials.Values.ToArray<int>()[i] + " Teachings");
+                file.WriteLine(63 * talentMaterials.Values.ToArray<int>()[i] + " Guide");
+                file.WriteLine(114 * talentMaterials.Values.ToArray<int>()[i] + " Philosophies");
+            }
+
+            file.WriteLine("---DAYS OF THE WEEK"); //SUNDAY = 0
+            for (int i = 0; i < talentMaterials.Count; i++)
+            {
+                switch (talentMaterials.Keys.ToArray<Character.TalentMaterials>()[i])
+                {
+                    //monday,thurdsday
+                    case Character.TalentMaterials.Freedom:
+                    case Character.TalentMaterials.Prosperity:
+                    case Character.TalentMaterials.Transience:
+                    case Character.TalentMaterials.Admonition:
+                        file.WriteLine("Farm " + talentMaterials.Keys.ToArray<Character.TalentMaterials>()[i].ToString() + " On Monday/Thursday or Sunday");
+                        break;
+                    case Character.TalentMaterials.Resistence:
+                    case Character.TalentMaterials.Diligence:
+                    case Character.TalentMaterials.Elegance:
+                    case Character.TalentMaterials.Ingenuity:
+                        file.WriteLine("Farm " + talentMaterials.Keys.ToArray<Character.TalentMaterials>()[i].ToString() + " On Tuesday/Friday or Sunday");
+                        break;
+                    case Character.TalentMaterials.Ballad:
+                    case Character.TalentMaterials.Gold:
+                    case Character.TalentMaterials.Light:
+                    case Character.TalentMaterials.Praxis:
+                        file.WriteLine("Farm " + talentMaterials.Keys.ToArray<Character.TalentMaterials>()[i].ToString() + " On Wednesday/Saturday or Sunday");
+                        break;
+
+                    default:
+                        break;
+
+
+                }
+            }
+
+            file.WriteLine("---Sugestion for Party Composition");
+
+            //Basic Sugestion 
+
+            if(elementalResonance.Count == 0)
+            {
+                file.WriteLine("No resonance in party, Is this intended?");
+            }
+            if (roles.ContainsKey(Character.Roles.MainDPS))
+            {
+                if(roles[Character.Roles.MainDPS] > 1)
+                {
+                    file.WriteLine("There is more than one MainDPS in the party, is this intended?");
+
+                }
+                
+            }
+            else
+            {
+                file.WriteLine("There is no MainDPS in the party, is this intended?");
+            }
+
+
+
+            
+
 
             file.Flush();
             file.Close();

@@ -272,8 +272,7 @@ namespace KleeMains
                     this.BackColor = System.Drawing.Color.DarkGoldenrod;
                     break;
                 case Elements.Dendro:
-                    //to do
-                    //to do
+                    this.BackColor = System.Drawing.Color.DarkGreen;
                     break;
                 default:
                     break;
@@ -308,6 +307,25 @@ namespace KleeMains
         {
             currentParty.generatePartyReport();
             MessageBox.Show("Party Report successfully generated", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+       
+
+       
+
+        private void closeForm(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
+
+        }
+
+        private void partySugestionUIButton_Click(object sender, EventArgs e)
+        {
+            PartySugestions partySugestions = new PartySugestions();
+            partySugestions.Show();
+
 
         }
     }

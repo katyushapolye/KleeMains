@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace KleeMains
 {
-    public partial class ElementGuide : Form
+    public partial class PartySugestions : Form
     {
-        public ElementGuide()
+        public PartySugestions()
         {
             InitializeComponent();
         }
-
-        private void close_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            this.Close();
-
-        }
     }
 }
- 

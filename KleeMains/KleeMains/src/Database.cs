@@ -41,6 +41,7 @@ namespace KleeMains
             List<Object> buffers = new List<Object>();
 
             int rowcount = 0;
+            int j = 0;
 
             while (sqlite_datareader.Read())
             {
@@ -53,6 +54,8 @@ namespace KleeMains
 
 
                 }
+                Console.WriteLine(j);
+                j++;
                 
             
                     //enums
@@ -200,8 +203,11 @@ namespace KleeMains
             }
 
             //parsing enums
-            
+           
+            Console.WriteLine((string)buffers[0]);
+            Console.WriteLine(Convert.ToInt32(buffers[1].ToString()));
             Enum.TryParse((string)buffers[2], out Weapon.WeaponType enum1);
+            Console.WriteLine((string)buffers[2]);
             Enum.TryParse((string)buffers[3], out Weapon.WeaponBonusType enum2);
 
             return new Weapon((string)buffers[0], Convert.ToInt32(buffers[1].ToString()),enum1 ,enum2,float.Parse(buffers[4].ToString()));

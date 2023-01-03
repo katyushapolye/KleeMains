@@ -83,6 +83,7 @@ namespace KleeMains
             this.charTalentMaterialsText = new System.Windows.Forms.Label();
             this.charCollectableMaterialsText = new System.Windows.Forms.Label();
             this.charAscensionBonusText = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.charSpriteUIImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dummyBox1)).BeginInit();
@@ -171,9 +172,9 @@ namespace KleeMains
             this.charNameUIText.BackColor = System.Drawing.Color.Transparent;
             this.charNameUIText.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.charNameUIText.ForeColor = System.Drawing.Color.MintCream;
-            this.charNameUIText.Location = new System.Drawing.Point(582, 22);
+            this.charNameUIText.Location = new System.Drawing.Point(563, 16);
             this.charNameUIText.Name = "charNameUIText";
-            this.charNameUIText.Size = new System.Drawing.Size(266, 44);
+            this.charNameUIText.Size = new System.Drawing.Size(299, 44);
             this.charNameUIText.TabIndex = 9;
             this.charNameUIText.Text = "Sangonomia Kokomi";
             this.charNameUIText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -306,6 +307,7 @@ namespace KleeMains
             this.partySugestionUIButton.TabIndex = 20;
             this.partySugestionUIButton.Text = "?";
             this.partySugestionUIButton.UseVisualStyleBackColor = true;
+            this.partySugestionUIButton.Click += new System.EventHandler(this.partySugestionUIButton_Click);
             // 
             // partyStatsHelpUIButton
             // 
@@ -668,6 +670,17 @@ namespace KleeMains
             this.charAscensionBonusText.Text = "dummy";
             this.charAscensionBonusText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(1090, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 23);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.closeForm);
+            // 
             // MainFrame
             // 
             this.AllowDrop = true;
@@ -675,6 +688,7 @@ namespace KleeMains
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1117, 657);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.totalMoraCostUIText);
             this.Controls.Add(this.charAscensionBonusText);
             this.Controls.Add(this.charCollectableMaterialsText);
@@ -786,6 +800,7 @@ namespace KleeMains
         private System.Windows.Forms.Label charTalentMaterialsText;
         private System.Windows.Forms.Label charCollectableMaterialsText;
         private System.Windows.Forms.Label charAscensionBonusText;
+        private System.Windows.Forms.Button button1;
     }
 }
 

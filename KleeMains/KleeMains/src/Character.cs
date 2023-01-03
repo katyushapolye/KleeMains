@@ -15,7 +15,7 @@ namespace KleeMains
         public enum Stats { HealthFlat,HealthPercent,ATKFlat,ATKPercent,DEFFlat,DEFPercent,CritRate,CritDMG,EM,EnergyRecharge}
         public enum Roles { MainDPS,SubDPS,Support,Healer}
 
-        public enum AscensionBonus {ElementalDMG,ATK,DEF,PhysicalDMG,EnergyRecharge,EM,Healing,CritRate,CritDMG}
+        public enum AscensionBonus {ElementalDMG,ATK,DEF,PhysicalDMG,EnergyRecharge,EM,Healing,CritRate,CritDMG,HP}
 
 
 
@@ -43,7 +43,7 @@ namespace KleeMains
         {
             HurricaneSeed, LightningPrism, BasaltPillar, HoarfrostCore, EverflameSeed, CleansingHeart, JuvenileJade, CrystallineBloom, MarionetteCore,
             PerpetualHeart, SmolderingPearl, DewOfRepudiation, RiftbornRegalia, DragonheirsFalseFin, RunicFang, MajesticHookedBeak, ThunderclapFruitcore,
-            PerpetualCaliber, LightGuidingTetrahedron
+            PerpetualCaliber, LightGuidingTetrahedron, StormBeads
         }
         public enum CommonMaterialT1 { SlimeCondensate, DamagedMask, DiviningScroll, FirmArrowhead, RecruitsInsignia, TreasureHoarderInsignia, WhopperFlowerNectar, OldHandguard, SpectralHusk, FungalSpores, FadedRedSatin }
         public enum CommonMaterialT2 { SlimeSecretions, StainedMask, SealedScroll, SharpArrowhead, SergeantsInsignia, SilverRavenInsignia, ShimmeringNectar, KageuchiHandguard, SpectralHeart, LuminescentPollen, TrimmedRedSilk }

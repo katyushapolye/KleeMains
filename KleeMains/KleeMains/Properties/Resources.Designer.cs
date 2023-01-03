@@ -63,6 +63,16 @@ namespace KleeMains.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bennett_Thumb {
+            get {
+                object obj = ResourceManager.GetObject("Bennett_Thumb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blackbar {
             get {
                 object obj = ResourceManager.GetObject("blackbar", resourceCulture);
