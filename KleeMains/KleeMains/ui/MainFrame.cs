@@ -306,7 +306,7 @@ namespace KleeMains
         private void generatePartyReportButtonUI_Click(object sender, EventArgs e)
         {
             currentParty.generatePartyReport();
-            MessageBox.Show("Party Report successfully generated", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Party Report successfully generated at the local folder", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 

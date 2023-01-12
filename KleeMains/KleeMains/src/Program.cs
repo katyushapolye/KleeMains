@@ -17,10 +17,13 @@ namespace KleeMains
 
     static class Program
     {
+        /*
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
+        */
         public static List<Character> characters;
+        
 
 
         /// <summary>
@@ -31,7 +34,7 @@ namespace KleeMains
         {
 
 
-            AllocConsole(); //debug only
+            //AllocConsole(); //debug only
             Database db = new Database("database.db");
             characters =  db.getAllCharacters();
             Party p = new Party();

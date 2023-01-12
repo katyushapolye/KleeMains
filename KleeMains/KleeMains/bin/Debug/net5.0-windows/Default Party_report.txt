@@ -3,65 +3,61 @@ Total EXP Cards Necessary: 1680
 Total Mora Cost: 1 680 000
 Max Theoretical DMG: 99999
 ---STONES: 
---GeoStones
-1 Silver
-9 Fragment
-9 Chunk
-6 Gemstone
---PyroStones
+--AnemoStones
 2 Silver
 18 Fragment
 18 Chunk
 12 Gemstone
---AnemoStones
+--CryoStones
+1 Silver
+9 Fragment
+9 Chunk
+6 Gemstone
+--HydroStones
 1 Silver
 9 Fragment
 9 Chunk
 6 Gemstone
 ---Farmable Materials:
-46 BasaltPillar
-92 EverflameSeed
-46 HurricaneSeed
+92 HurricaneSeed
+46 CrystallineBloom
+46 RunicFang
 ---Collectable Materials:
-168 GlazeLily
-168 JueyunChili
-168 Violetgrass
-168 DandelionSeed
+168 Cecilia
+168 CrystalMarrow
+168 WindwheelAster
+168 Starconch
 ---T1 Materials:
-18 RecruitsInsignia
 18 SlimeCondensate
-18 TreasureHoarderInsignia
-18 DamagedMask
+18 SpectralHusk
+18 WhopperFlowerNectar
+18 RecruitsInsignia
 ---T2 Materials:
-30 SergeantsInsignia
 30 SlimeSecretions
-30 SilverRavenInsignia
-30 StainedMask
+30 SpectralHeart
+30 ShimmeringNectar
+30 SergeantsInsignia
 ---T3 Materials:
-36 LieutenantsInsignia
 36 SlimeConcentrate
-36 GoldenRavenInsignia
-36 OminousMask
+36 SpectralNucleus
+36 EnergyNectar
+36 LieutenantsInsignia
 ---TALENT MATERIALS
---Prosperity
-9 Teachings
-63 Guide
-114 Philosophies
---Diligence
-9 Teachings
-63 Guide
-114 Philosophies
---Gold
+--Ballad
 9 Teachings
 63 Guide
 114 Philosophies
 --Freedom
+18 Teachings
+126 Guide
+228 Philosophies
+--Prosperity
 9 Teachings
 63 Guide
 114 Philosophies
 ---DAYS OF THE WEEK
-Farm Prosperity On Monday/Thursday or Sunday
-Farm Diligence On Tuesday/Friday or Sunday
-Farm Gold On Wednesday/Saturday or Sunday
+Farm Ballad On Wednesday/Saturday or Sunday
 Farm Freedom On Monday/Thursday or Sunday
+Farm Prosperity On Monday/Thursday or Sunday
 ---Sugestion for Party Composition
+There is no MainDPS in the party, is this intended?
